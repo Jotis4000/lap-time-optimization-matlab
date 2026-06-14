@@ -7,7 +7,7 @@
 
 > **Executive Summary:** A quasi-steady-state racing line and minimum-lap-time optimization tool built on discrete point-force vehicle dynamics. The circuit is reduced to a one-dimensional lateral-deviation problem in a curvilinear (Frenet-style) coordinate system, discretized with curvature-driven **Adaptive Mesh Refinement**, and reconstructed with boundary-safe **Modified Akima (makima)** splines. A multi-phase strategy combines a geometric **curvature** pre-optimization, a physics-based **Sequential Quadratic Programming (SQP, `fmincon`)** lap-time solver, optional **Particle Swarm Optimization (PSO)** seeding, and a final perturbation search. Demonstrated on the Hungaroring with an F1-class vehicle model, the pipeline drives a 1:29.4 geometric baseline down to a best lap of **1:15.950**.
 
-Barnabas Szeibert · Panagiotis Sachinis — April 2026
+Panagiotis Sachinis · Barnabas Szeibert — April 2026
 
 ---
 
@@ -171,4 +171,4 @@ main_hybrid_customPSO  % coarse custom PSO -> fine fmincon
 
 Key tunables sit at the top of each `main_*.m`: the control-point count `n_var`, the spline type (`'makima'` or `'bspline'`), the AMR weights (`corner_weight`, `smoothing_window`), the curvature length penalty `weight_length`, and the smoothness penalty `w_smooth`. Each script prints final metrics (line length, integrated curvature, lap time) and renders the racing line and telemetry plots.
 
-> **Note:** the physics objective is non-convex and the gradient solver finds a strong local minimum, not a proven global optimum — expect run-to-run variation when seeding from PSO. For questions, contact the authors.
+> **Note:** the physics objective is non-convex and the gradient solver finds a strong local minimum, not a proven global optimum — expect run-to-run variation when seeding from PSO. For questions, contact the authors. This cover page has been made with the help of external agents for the summary of the project. For further information, please read the full report.
